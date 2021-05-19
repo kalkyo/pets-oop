@@ -19,8 +19,24 @@ $f3 = Base::instance();
 $f3->route('GET /', function() {
     echo '<h1>Hello, pets!</h1>';
 
-    //Instantiate a pet object
-    $pet1 = new Pet();
+    /*//Instantiate a pet object default constructor
+    $pet1 = new Pet();*/
+    // $pet1 = new Pet("Fido", "pink");
+    // $pet1 = new Pet();
+    $pet1 = new Pet("Fido");
+
+    //Test setter and getter
+    $pet1->setName("Fifi");
+    echo "My pet's name is " . $pet1->getName();
+
+    echo "<br>";
+
+    $pet1->setColor("silver");
+    echo "My pet's color is " . $pet1->getColor();
+
+    echo "<pre>";
+    var_dump($pet1);
+    echo "</pre>";
 
     //Invoke the pet methods
     $pet1->eat();
